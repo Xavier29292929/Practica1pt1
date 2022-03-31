@@ -3,13 +3,13 @@ package Aplicacio;
 import java.util.Map;
 
 public class NodeHash<K extends Comparable<K>, T extends Comparable> {
-    K key; //DNI
-    T value; //Ciutada
+    private K clau; //DNI
+    private T valor; //Ciutada
     NodeHash<K,T> next;
 
-    public NodeHash(K key, T value, NodeHash<K,T> next){
-        this.key=key;
-        this.value=value;
+    public NodeHash(K clau, T valor, NodeHash<K,T> next){
+        this.clau=clau;
+        this.valor=valor;
         this.next=next;
     }
 }
