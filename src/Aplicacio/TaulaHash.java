@@ -11,10 +11,68 @@ public class TaulaHash<K extends Comparable<K>, T extends Comparable> {
         this.CubsUtilitzats = 0;
     }
 
-    public void InserirH(K key, T value){
+    public void InserirH(K clau, T valor){
         double Fc = CubsUtilitzats*1.0/this.table.length;
         if (Fc > this.FactorCarrega){
             Redimensionat();
+        }
+        int index=clau.hashCode() % this.table.length;
+        if(this.table[index] == null){
+            this.table[index] = new NodeHash<>(clau, valor, null);
+            this.CubsUtilitzats++;
+        }else {
+            NodeHash<K,T> cur = this.table[index];
+            while (cur != null){
+                if (cur.clau.compareTo(clau)== 0){
+                    cur.valor=valor;
+                    break;
+                }
+                cur = cur.seg;
+            }
+            if (cur == null){
+                this.table[index] = new NodeHash<>(clau, valor, this.table[index]);
+            }
+        }
+    }
+
+    public T Obtenir(K clau){
+        int index = clau.hashCode() % this.table.length;
+        if (this.table[index] == null) {
+            return null;
+        }else {
+            NodeHash<K,T> cur = this.table[index];
+            while (cur != null){
+                if (cur.clau.compareTo(clau) == 0){
+                    return cur.valor;
+                }
+                cur = cur.seg;
+            }
+            return null;
+        }
+    }
+
+    public void Esborrar(K clau){
+        int index = clau.hashCode() % this.table.length;
+        if (this.table[index] == null){
+            return;
+        }else {
+            NodeHash<K,T> ant = null;
+            NodeHash<K,T> cur = this.table[index];
+            while (cur != null){
+                if (cur.clau.compareTo(clau) == 0){
+                    if (ant == null){
+                        this.table[index] = cur.seg;
+                    }else {
+                        ant.seg = cur.seg;
+                    }
+                    if (this.table[index] == null){
+                        this.CubsUtilitzats--;
+                    }
+                    return;
+                }
+                ant = cur;
+                cur = cur.seg;
+            }
         }
     }
 
