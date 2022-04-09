@@ -77,6 +77,17 @@ public class TaulaHash<K extends Comparable<K>, T extends Comparable> {
     }
 
     private void Redimensionat() {
+        NodeHash<K,T>[] antigaTable = this.table;
+        this.CubsUtilitzats = 0;
+        this.table= new NodeHash[2*antigaTable.length];
+
+        for (int i=0; i < antigaTable.length; i++){
+            NodeHash<K,T> cur = antigaTable[i];
+            while (cur != null){
+                this.InserirH(cur.clau, cur.valor);
+                cur = cur.seg;
+            }
+        }
     }
 
 }
