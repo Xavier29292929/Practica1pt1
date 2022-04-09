@@ -90,6 +90,10 @@ public class TaulaHash<K extends Comparable<K>, T extends Comparable> {
         }
     }
 
+    public int Mida(){
+        return table.length;
+    }
+
     public double ObtenirFactorCarrega(){
         double fc = CubsUtilitzats * 1.0 / this.table.length;
         return fc;
