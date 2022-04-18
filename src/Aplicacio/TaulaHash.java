@@ -1,5 +1,7 @@
 package Aplicacio;
 
+import Excepcions.NoTrobat;
+
 public class TaulaHash<K extends Comparable<K>, T extends Comparable> {
     private NodeHash<K,T>[] table;
     private double FactorCarrega;
@@ -49,6 +51,25 @@ public class TaulaHash<K extends Comparable<K>, T extends Comparable> {
             }
             return null;
         }
+    }
+
+    public int BuscarH(K clau) throws NoTrobat{
+        int index= clau.hashCode() % this.table.length;
+        int posicio=0;
+        boolean Trobat = false;
+        NodeHash<K, T> cur = this.table[index];
+        while (posicio<this.table.length-1 && !Trobat){
+            if (!(cur.clau.compareTo(clau) == 0)){
+                posicio++;
+                cur = cur.seg;
+            }else {
+                Trobat=true;
+            }
+        }
+        if (!Trobat){
+            throw new NoTrobat(this.table.length);
+        }
+        return posicio;
     }
 
     public void Esborrar(K clau){
