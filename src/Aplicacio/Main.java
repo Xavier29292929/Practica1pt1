@@ -28,5 +28,7 @@ public class Main {
         System.out.println("Metode esborrar"+ llista.Esborrar(2));
         System.out.println("Comprovar que s'ha esborrat"+ llista.Longitud());
         System.out.println("Metode buscar"+ llista.Buscar(ciutada1));
+
+        TaulaHash<String, Ciutada> taula = new TaulaHash<>();
     }
 }
