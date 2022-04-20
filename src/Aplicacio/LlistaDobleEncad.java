@@ -115,7 +115,7 @@ public class LlistaDobleEncad<T> implements Iterable<T>{
         }
         if (posicio == Longitud - 1){
             Node prenode = this.TrobarAnt(posicio);
-            this.Final.ant=this.Final.seg.seg;
+            this.Final.ant=this.Final.ant.ant;
             this.Final.ant.seg.ant = null;
             this.Final.ant.seg = null;
             Longitud--;
