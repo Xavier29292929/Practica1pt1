@@ -29,6 +29,23 @@ public class Main {
         System.out.println("Comprovar que s'ha esborrat"+ llista.Longitud());
         System.out.println("Metode buscar"+ llista.Buscar(ciutada1));
 
-        TaulaHash<String, Ciutada> taula = new TaulaHash<>();
+        TaulaHash<Integer, String> taula = new TaulaHash<>();
+
+        taula.InserirH(39943636, "Leo Messi");
+        taula.InserirH(35548689, "Andres Iniesta");
+        taula.InserirH(42836589, "Carles Puyol");
+
+        System.out.println("Mostrar mida de la taula"+ taula.Mida());
+        System.out.println("El factor de carrega actual es"+ taula.ObtenirFactorCarrega());
+        System.out.println("Metode Obtenir"+ taula.Obtenir(39943636));
+        System.out.println("Metode Buscar"+ taula.BuscarH(35548689));
+        //Joc de Proves del metode esborrar
+        System.out.println("Comprovem que Carles Puyol esta amb la seva clau"+ taula.Obtenir(42836589));
+        System.out.println("Borrem a Carles Puyol");
+        taula.Esborrar(42836589);
+        System.out.println("Comprovem que ja no hi es"+ taula.Obtenir(42836589));
+        System.out.println("Ho comprovem amb el metode buscar"+ taula.BuscarH(42836589));
+
+
     }
 }
