@@ -34,9 +34,9 @@ public class Main {
         taula.InserirH(39943636, "Leo Messi");
         taula.InserirH(35548689, "Andres Iniesta");
         taula.InserirH(42836589, "Carles Puyol");
+        taula.InserirH(34659768, "Javier Mascherano");
 
         System.out.println("Mostrar mida de la taula"+ taula.Mida());
-        System.out.println("El factor de carrega actual es"+ taula.ObtenirFactorCarrega());
         System.out.println("Metode Obtenir"+ taula.Obtenir(39943636));
         System.out.println("Metode Buscar"+ taula.BuscarH(35548689));
         //Joc de Proves del metode esborrar
@@ -45,7 +45,11 @@ public class Main {
         taula.Esborrar(42836589);
         System.out.println("Comprovem que ja no hi es"+ taula.Obtenir(42836589));
         System.out.println("Ho comprovem amb el metode buscar"+ taula.BuscarH(42836589));
-
-
+        //Joc de Proves del redimensionat
+        System.out.println("El factor de carrega actual es"+ taula.ObtenirFactorCarrega());//Factor de carrega actual
+        taula.InserirH(26549245, "Han Solo");
+        System.out.println("El factor de carrega amb la mida max"+ taula.ObtenirFactorCarrega())
+        taula.InserirH(31865496, "Luke Skywalker");
+        System.out.println("El factor de carrega sobrepassant la mida"+ taula.ObtenirFactorCarrega());
     }
 }

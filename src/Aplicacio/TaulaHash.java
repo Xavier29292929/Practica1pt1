@@ -8,7 +8,7 @@ public class TaulaHash<K extends Comparable<K>, T extends Comparable> {
     private int CubsUtilitzats;
 
     public TaulaHash(){
-        this.table = new NodeHash[3];
+        this.table = new NodeHash[4];
         this.FactorCarrega = 0.75;
         this.CubsUtilitzats = 0;
     }
