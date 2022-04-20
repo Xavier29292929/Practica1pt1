@@ -15,7 +15,7 @@ public class Main {
         llista.InserirF(ciutada1);
         llista.InserirF(ciutada2);
         llista.Inserir(1, ciutada3);
-        llista.Inserir(3, ciutada4);
+        llista.Inserir(4, ciutada4);
 
         System.out.println("Iteració de la llista");
         Iterator<Node<Ciutada>> iterator = llista.iterador();
@@ -39,13 +39,12 @@ public class Main {
 
         System.out.println("Mostrar mida de la taula"+ taula.Mida());
         System.out.println("Metode Obtenir"+ taula.Obtenir(39943636));
-        System.out.println("Metode Buscar"+ taula.BuscarH(35548689));
+        System.out.println("Metode Buscar"+ taula.BuscarH(39943636));
         //Joc de Proves del metode esborrar
         System.out.println("Comprovem que Carles Puyol esta amb la seva clau"+ taula.Obtenir(42836589));
         System.out.println("Borrem a Carles Puyol");
         taula.Esborrar(42836589);
         System.out.println("Comprovem que ja no hi es"+ taula.Obtenir(42836589));
-        //System.out.println("Ho comprovem amb el metode buscar"+ taula.BuscarH(42836589));
         //Joc de Proves del redimensionat
         System.out.println("El factor de carrega actual es"+ taula.ObtenirFactorCarrega());//Factor de carrega actual
         taula.InserirH(26549245, "Han Solo");
