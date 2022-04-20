@@ -52,6 +52,8 @@ public class Main {
         taula.InserirH(31865496, "Luke Skywalker");
         taula.InserirH(62359848, "Tony Stark");
         System.out.println("El factor de carrega sobrepassant la mida"+ taula.ObtenirFactorCarrega());
+        System.out.println(taula.Obtenir(62359848));
+        System.out.println(taula.Mida());
        
     }
 }
