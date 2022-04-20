@@ -4,7 +4,7 @@ import Excepcions.NoTrobat;
 
 import java.util.Iterator;
 
-public class LlistaDobleEncad<T> implements Iterable<T>{
+public class LlistaDobleEncad<T> implements Iterable<Node<T>>{
     private Node Inici;
     private Node Final;
     private int Longitud =0;
@@ -15,8 +15,49 @@ public class LlistaDobleEncad<T> implements Iterable<T>{
         Inici.seg=null;
         Final.ant=null;
     }
+    
+    public Iterator<Node<T>> iterador(){
+        LListaDobleEncadIterada<T> LlistaIterada= new LListaDobleEncadIterada<T>(this);
+        return LlistaIterada;
+    }
 
-    public void InserirF(T C){
+    public Node getFinal() {
+		return Final;
+	}
+
+
+
+	public void setFinal(Node final1) {
+		Final = final1;
+	}
+
+
+
+	public int getLongitud() {
+		return Longitud;
+	}
+
+
+
+	public void setLongitud(int longitud) {
+		Longitud = longitud;
+	}
+
+
+
+	public Node getInici() {
+		return Inici;
+	}
+
+
+
+	public void setInici(Node inici) {
+		Inici = inici;
+	}
+
+
+
+	public void InserirF(T C){
         Node node = new Node(C);
         Node rnode = Inici;
 
@@ -131,7 +172,7 @@ public class LlistaDobleEncad<T> implements Iterable<T>{
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<Node<T>> iterator() {
         LListaDobleEncadIterada<T> llista = new LListaDobleEncadIterada<>(this);
         return llista;
     }

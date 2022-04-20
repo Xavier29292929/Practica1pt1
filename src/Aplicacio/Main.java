@@ -18,16 +18,17 @@ public class Main {
         llista.Inserir(3, ciutada4);
 
         System.out.println("La llista hauria de ser: ciutada3, ciutada1, ciutada4, ciutada2");
-        Iterator<Ciutada> iterator = llista.iterator();
+        Iterator<Node<Ciutada>> iterator = llista.iterador();
         while (iterator.hasNext()){
-            System.out.println((Ciutada) iterator.next());
+            System.out.println(iterator.next());
         }
 
-        System.out.println("Metode Obtenir"+ llista.Obtenir(2));
-        System.out.println("Longitud de la llista"+ llista.Longitud());
-        System.out.println("Metode esborrar"+ llista.Esborrar(2));
-        System.out.println("Comprovar que s'ha esborrat"+ llista.Longitud());
-        System.out.println("Metode buscar"+ llista.Buscar(ciutada1));
+
+        System.out.println("Metode Obtenir"+ llista.Obtenir(2).toString());
+        System.out.println("Longitud de la llista: "+ llista.Longitud());
+        System.out.println("Metode esborrar"+ llista.Esborrar(2).toString());
+        System.out.println("Comprovar que s'ha esborrat: "+ llista.Longitud());
+        //System.out.println("Metode buscar"+ llista.Buscar(ciutada1));
 
         TaulaHash<Integer, String> taula = new TaulaHash<>();
 
@@ -44,12 +45,14 @@ public class Main {
         System.out.println("Borrem a Carles Puyol");
         taula.Esborrar(42836589);
         System.out.println("Comprovem que ja no hi es"+ taula.Obtenir(42836589));
-        System.out.println("Ho comprovem amb el metode buscar"+ taula.BuscarH(42836589));
+        //System.out.println("Ho comprovem amb el metode buscar"+ taula.BuscarH(42836589));
         //Joc de Proves del redimensionat
         System.out.println("El factor de carrega actual es"+ taula.ObtenirFactorCarrega());//Factor de carrega actual
         taula.InserirH(26549245, "Han Solo");
         System.out.println("El factor de carrega amb la mida max"+ taula.ObtenirFactorCarrega());
         taula.InserirH(31865496, "Luke Skywalker");
+        taula.InserirH(62359848, "Tony Stark");
         System.out.println("El factor de carrega sobrepassant la mida"+ taula.ObtenirFactorCarrega());
+       
     }
 }

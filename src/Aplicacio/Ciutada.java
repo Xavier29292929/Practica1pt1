@@ -1,5 +1,6 @@
 package Aplicacio;
 
+
 public class Ciutada implements Comparable<Ciutada>{
     public String Nom;
     public String Cognom;
@@ -10,7 +11,15 @@ public class Ciutada implements Comparable<Ciutada>{
         this.Cognom=Cognom;
         this.DNI=DNI;
     }
+    
+    
     @Override
+	public String toString() {
+		return "Ciutada [Nom=" + Nom + ", Cognom=" + Cognom + ", DNI=" + DNI + "]";
+	}
+
+
+	@Override
     public int compareTo(Ciutada o) {
         if (this.DNI == o.DNI){
             return 0;

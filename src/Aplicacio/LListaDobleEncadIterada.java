@@ -1,29 +1,31 @@
 package Aplicacio;
 import java.util.Iterator;
 
-public class LListaDobleEncadIterada<T> implements Iterator<T>{
-    private LlistaDobleEncad<T> llista;
+public class LListaDobleEncadIterada<T> implements Iterator<Node<T>>{
+    private int posicio;
+	private LlistaDobleEncad<T> llista;
     private Node<T> PosicioIterator;
 
     public LListaDobleEncadIterada(LlistaDobleEncad<T> llista){
-        Node<T> node;
+        llista=this.llista;
+        posicio = 0;
+        PosicioIterator=llista.getInici();
     }
 
     @Override
     public boolean hasNext() {
-        if (PosicioIterator==null){
-            return false;
-        }
-        if (PosicioIterator!=null){
-            return true;
-        }
-        return false;
+        return (posicio<llista.getLongitud()) && PosicioIterator!=null;
     }
 
     @Override
-    public T next() {
-        T dades=PosicioIterator.getC();
-        PosicioIterator=PosicioIterator.getSeg();
-        return dades;
+    public Node<T> next() {
+        PosicioIterator=llista.getInici().getSeg();
+        int posi=0;
+        while (posi != posicio && posicio<llista.getLongitud()){
+            PosicioIterator= PosicioIterator.getSeg();
+            posi++;
+        }
+        posicio++;
+        return PosicioIterator;
     }
 }
