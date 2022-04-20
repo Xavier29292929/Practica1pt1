@@ -48,7 +48,7 @@ public class Main {
         //Joc de Proves del redimensionat
         System.out.println("El factor de carrega actual es"+ taula.ObtenirFactorCarrega());//Factor de carrega actual
         taula.InserirH(26549245, "Han Solo");
-        System.out.println("El factor de carrega amb la mida max"+ taula.ObtenirFactorCarrega())
+        System.out.println("El factor de carrega amb la mida max"+ taula.ObtenirFactorCarrega());
         taula.InserirH(31865496, "Luke Skywalker");
         System.out.println("El factor de carrega sobrepassant la mida"+ taula.ObtenirFactorCarrega());
     }
