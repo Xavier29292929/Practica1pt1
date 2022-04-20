@@ -17,7 +17,7 @@ public class Main {
         llista.Inserir(1, ciutada3);
         llista.Inserir(3, ciutada4);
 
-        System.out.println("La llista hauria de ser: ciutada3, ciutada1, ciutada4, ciutada2");
+        System.out.println("Iteració de la llista");
         Iterator<Node<Ciutada>> iterator = llista.iterador();
         while (iterator.hasNext()){
             System.out.println(iterator.next());
