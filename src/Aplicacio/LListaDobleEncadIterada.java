@@ -6,8 +6,8 @@ public class LListaDobleEncadIterada<T> implements Iterator<Node<T>>{
 	private LlistaDobleEncad<T> llista;
     private Node<T> PosicioIterator;
 
-    public LListaDobleEncadIterada(LlistaDobleEncad<T> llista){
-        llista=this.llista;
+    public LListaDobleEncadIterada(LlistaDobleEncad<T> lli){
+        llista=lli;
         posicio = 0;
         PosicioIterator=llista.getInici();
     }
